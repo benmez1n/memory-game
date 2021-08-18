@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.control-buttons{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 2;
+    background-color: rgba(38, 38, 39, 0.9);
+}
+.control-buttons button{
+    margin-top:20%;
+    border: none;
+    text-transform: uppercase;
+    width:300px;
+    background-color:red;
+    color:white;
+    padding:20px 0;
+    font-size: 32px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.info-container{
+    width:1170px;
+    margin:20px auto;
+    border:solid 2px black;
+    display:flex;
+    justify-content: space-between;
+    padding:8px 15px ;
+    font-size: 20px;
+    background-color: aquamarine;
+}
+.memory-game-cards{
+    width:800px;
+    margin:20px auto;
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    row-gap: 20px;
+}
+.memory-game-cards.no-click{pointer-events: none;}
+.memory-game-cards .card-block {
+    width:120px;
+    height: 120px;
+    text-align: center;
+    position:relative;
+    transition: transform .5s;
+    transform-style:preserve-3d;
+}
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    font-size: 68px;
+    font-weight: bold;
+    padding-top:15px;
+    border-radius: 8px;
+    border:2px solid black;
+    background-color: chartreuse;
+    cursor: pointer;
+}
+.card-block .back{
+    transform: rotateY(180deg);
+    background-color: chocolate;
+}
+.card-block .front::before{content:'?';}
+.flipped,.has-match{transform: rotateY(180deg);}
+.control-buttons{
+    text-transform: uppercase;
+}
